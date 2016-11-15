@@ -1,5 +1,6 @@
 package com.kubiczek.card;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -10,6 +11,7 @@ import java.util.Random;
  */
 public class Deck {
     public static final String STANDARD_52_CARD_DECK = "STANDARD_52_CARD_DECK";
+    public static final String EMPTY_DECK = "EMPTY_DECK";
 
     private final List<Card> cards = new LinkedList<>();
 
@@ -27,6 +29,8 @@ public class Deck {
                     }
                 }
                 return new Deck(cards);
+            case EMPTY_DECK:
+                return new Deck(Collections.EMPTY_LIST);
             default:
                 throw new IllegalArgumentException("Unsupported type of deck card: " + type);
         }
