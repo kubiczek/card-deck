@@ -62,4 +62,11 @@ public class Deck {
     public int size() {
         return this.cards.size();
     }
+
+    @Override
+    public String toString() {
+        return "Deck{" +
+                "cards=" + cards +
+                '}';
+    }
 }
